@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Miilon</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+  </head>
+  
+  <body>
+  
+    <h1>Miilon</h1>
+
+    <table id="tableSections">
+      <tr>
+        <th>Marquer</th>
+        <th>Source</th>
+        <th>Unité</th>
+        <th>Page</th>
+        <th>Section</th>
+      </tr>
+    </table>
+
+    <br/>
+    <br/>
+
+    <input type="button" id="buttonRefresh" value="Rafraîchir la série de mots" onclick="buttonRefresh_onClick()" />
+
+    <br/>
+    <br/>
+      
+    <table id="tableWord">
+      <tr>
+        <th>Mot français</th>
+        <td><span id="spanForeign">AA</span></td>
+      <tr>
+      <tr>
+        <th>Grammaire</th>
+        <td><span id="spanGrammar">BB</span></td>
+      <tr>
+      <tr>
+        <th>Prononciation</th>
+        <td><span id="spanPronunciation">CC</span></td>
+      <tr>
+      <tr>
+        <th>Signification en tchèque</th>
+        <td><span id="spanMeaning">DD</span></td>
+      <tr>
+    </table>
+
+    <br/>
+    <br/>
+
+    <input type="button" id="buttonNext" value="Mot suivant" onclick="buttonNext_onClick()" />
+  
+    <script src="script.js"></script>
+  
+  </body>
+
+</html>
+

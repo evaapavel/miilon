@@ -1,0 +1,60 @@
+body {
+  /* background-color: #222222; */
+  /* background-color: #DDDDDD; */
+  /* background-color: #DDDD00; */
+  /* background-color: #DDDD22; */
+  /* background-color: #DDDD77; */
+  /* background-color: #3d6099; */
+  /* background-color: #1664e2; */
+  background-color: #6999e5;
+}
+
+
+#tableSections {
+  /* border: solid 1px black; */
+  /* border-style: solid; */
+  /* border-style: solid; */
+  /* border-width: 1px; */
+  /* border-color: black; */
+
+  /* border-spacing: 0px; */
+  /* border-spacing: 0; */
+
+  /* border-collapse: separate; */
+  border-collapse: collapse;
+
+  /* border-spacing: 10px; */
+  border-spacing: 0;
+}
+
+
+
+
+
+#tableSections, #tableSections td, #tableSections th {
+  border: 1px solid #000000;
+}
+
+
+#tableSections td, #tableSections th {
+  /* padding: 10px; */
+  /* padding: 0px; */
+  /* padding: 2px; */
+  padding: 4px;
+  text-align: left;
+}
+
+
+
+
+
+#tableWord th {
+  /* text-align: left; */
+  text-align: right;
+}
+
+
+#tableWord td, #tableWord th {
+  padding: 4px;
+}
+
