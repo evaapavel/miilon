@@ -78,6 +78,31 @@ var vocabulary = {
       ]
     },
   
+    {
+      "source": "ÉDITO B2",
+      "unit": "unité 3",
+      "page": 40,
+      "section": "LA PRESSE",
+      "words": [
+        { "foreign": "abonnement", "grammar": "nm", "pronunciation": "abonma~", "meaning": "předplatné" },
+        { "foreign": "s'abonner à qc", "grammar": "vp", "pronunciation": "sabone.", "meaning": "předplatit si co" },
+        { "foreign": "agence de presse", "grammar": "nf", "pronunciation": "aža~:s d@ pres", "meaning": "tisková agentura" },
+        { "foreign": "diffusion", "grammar": "nf", "pronunciation": "difüzjo~", "meaning": "rozhlas, vysílání, šíření" },
+        { "foreign": "hebdomadaire", "grammar": "nm", "pronunciation": "ebdomade:r", "meaning": "týdeník" },
+        { "foreign": "lecteur", "grammar": "nm", "pronunciation": "lektö:r", "meaning": "čtenář" },
+        { "foreign": "lectrice", "grammar": "nf", "pronunciation": "lektris", "meaning": "čtenářka" },
+        { "foreign": "lectorat", "grammar": "nm", "pronunciation": "lektora", "meaning": "čtenáři" },
+        { "foreign": "mensuel", "grammar": "nm", "pronunciation": "ma~sü^el", "meaning": "zaměstnanec s měsíčním platem, měsíčník" },
+        { "foreign": "périodique", "grammar": "nm", "pronunciation": "pe.rjodik", "meaning": "periodikum, periodický časopis" },
+        { "foreign": "presse à scandale", "grammar": "nf", "pronunciation": "pres a ska~dal", "meaning": "skandální tisk" },
+        { "foreign": "presse féminine", "grammar": "nf", "pronunciation": "pres fe.minin", "meaning": "tisk pro ženy" },
+        { "foreign": "quotidien", "grammar": "nm", "pronunciation": "kotidje~", "meaning": "deník" },
+        { "foreign": "régional, ale, aux", "grammar": "adj", "pronunciation": "re.žjonal", "meaning": "krajský, regionální" },
+        { "foreign": "revue", "grammar": "nf", "pronunciation": "r@vü", "meaning": "revue (časopis)" },
+        { "foreign": "tirage", "grammar": "nm", "pronunciation": "tira:ž", "meaning": "vlečení, tahání, kopírování, vystavení směnky, tisk, náklad (knihy)" },
+      ]
+    },
+  
   ]
   
 };
