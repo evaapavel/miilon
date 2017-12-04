@@ -2,6 +2,7 @@
 <html>
 
   <head>
+    <meta charset="UTF-8">
     <title>Miilon</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
@@ -11,7 +12,40 @@
   
     <h1>Miilon</h1>
 
+    <h3>Test</h3>
+    
+    <table id="tableWord">
+      <tr>
+        <th colspan="3">Français</th>
+      </tr>
+      <tr>
+        <td><span id="spanForeign"><input type="text" id="textForeign" /></span></td>
+        <td><span id="spanGrammar"><input type="text" id="textGrammar" /></span></td>
+        <td><span id="spanPronunciation"><input type="text" id="textPronunciation" /></span></td>
+      <tr>
+      <tr>
+        <th colspan="3">Tchèque</th>
+      </tr>
+      <tr>
+        <td colspan="3"><span id="spanMeaning"><input type="text" id="textMeaning" /></span></td>
+      <tr>
+    </table>
+
+    <br/>
+    <!--
+    <br/>
+    -->
+
+    <input type="button" id="buttonNext" value="Mot suivant" onclick="buttonNext_onClick()" />
+
+    <br/>
+    <br/>
+
+    <h3>Choisir des sections à aprendre</h3>
+
     <table id="tableSections">
+
+      <!--
       <tr>
         <th>Marquer</th>
         <th>Source</th>
@@ -19,39 +53,76 @@
         <th>Page</th>
         <th>Section</th>
       </tr>
+      -->
+
+      <tr>
+        <td></td>
+        <td></td>
+        <!--
+        <td></td>
+        <td></td>
+        <td></td>
+        -->
+      </tr>
+
     </table>
 
     <br/>
+    <!--
     <br/>
+    -->
 
     <input type="button" id="buttonRefresh" value="Rafraîchir la série de mots" onclick="buttonRefresh_onClick()" />
 
     <br/>
     <br/>
-      
-    <table id="tableWord">
+
+    <h3>Manière de tester</h3>
+
+    <table id="tableSettings">
       <tr>
-        <th>Mot français</th>
-        <td><span id="spanForeign"></span></td>
+        <td><input type="radio" name="radioGroupFirst" id="radioForeignFirst" /></td>
+        <td>Traduire en tchèque</td>
+        <td></td>
+      </tr>
       <tr>
+        <td><input type="radio" name="radioGroupFirst" id="radioNativeFirst" /></td>
+        <td>Traduire en français</td>
+        <td></td>
+      </tr>
       <tr>
-        <th>Grammaire</th>
-        <td><span id="spanGrammar"></span></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
       <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
       <tr>
-        <th>Prononciation</th>
-        <td><span id="spanPronunciation"></span></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
       <tr>
+        <td><input type="checkbox" id="checkboxAutoNext" /></td>
+        <td>Échanger les mots automatiquement chaque</td>
+        <td>
+          <select id="selectTimeDelay">
+            <option value="1">1 seconde</option>
+            <option value="3">3 secondes</option>
+            <option value="5">5 secondes</option>
+            <option value="10">10 secondes</option>
+          </select>
+        </td>
+      </tr>
       <tr>
-        <th>Signification en tchèque</th>
-        <td><span id="spanMeaning"></span></td>
-      <tr>
+        <td><input type="checkbox" id="checkboxInteractive" /></td>
+        <td>L'utilisateur doit deviner des mots en tapant</td>
+        <td></td>
+      </tr>
     </table>
-
-    <br/>
-    <br/>
-
-    <input type="button" id="buttonNext" value="Mot suivant" onclick="buttonNext_onClick()" />
 
     <br/>
     <br/>
@@ -59,7 +130,7 @@
     <br/>
 
     <div>
-      Registration closes in <span id="spanTime">05:00</span> minutes!
+      L'enregistrement sera fermé à <span id="spanTime">05:00</span> minutes!
     </div>
 
     <br/>

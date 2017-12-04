@@ -8,7 +8,7 @@ var vocabulary = {
   
     {
       "source": "ÉDITO B2",
-      "unit": "unité 2",
+      "unit": "Unité 2",
       "page": 32,
       "section": "DU CÔTÉ DES ANIMAUX",
       "words": [
@@ -28,7 +28,7 @@ var vocabulary = {
     {
       "source": "Papier",
       "unit": "Serge Gainsbourg",
-      "page": 0,
+      "page": 1,
       "section": "Sois belle et tais-toi",
       "words": [
         { "foreign": "ramier", "grammar": "nm", "pronunciation": "ramje.", "meaning": "doupňák (holub)" },
@@ -61,7 +61,7 @@ var vocabulary = {
   
     {
       "source": "ÉDITO B2",
-      "unit": "unité 3",
+      "unit": "Unité 3",
       "page": 40,
       "section": "LA COMMUNICATION",
       "words": [
@@ -80,7 +80,7 @@ var vocabulary = {
   
     {
       "source": "ÉDITO B2",
-      "unit": "unité 3",
+      "unit": "Unité 3",
       "page": 40,
       "section": "LA PRESSE",
       "words": [
@@ -123,6 +123,7 @@ var selectedWords = [];
 //  alert(wordSet.section);
 //}
 for (var i = 0; i < vocabulary.wordSets.length; i++) {
+
   var wordSet = vocabulary.wordSets[i];
   //alert(wordSet.section);
   //sectionsTable.children
@@ -131,17 +132,22 @@ for (var i = 0; i < vocabulary.wordSets.length; i++) {
 
   var cellMark = newRow.insertCell(0);
 
-  var cellSource = newRow.insertCell(1);
-  var cellUnit = newRow.insertCell(2);
-  var cellPage = newRow.insertCell(3);
-  var cellSection = newRow.insertCell(4);
+  //var cellSource = newRow.insertCell(1);
+  //var cellUnit = newRow.insertCell(2);
+  //var cellPage = newRow.insertCell(3);
+  //var cellSection = newRow.insertCell(4);
 
+  var cellDescription = newRow.insertCell(1);
+  
   cellMark.innerHTML = "<input type='checkbox' id='checkboxMarkSection" + i + "' />";
 
-  cellSource.innerHTML = wordSet.source;
-  cellUnit.innerHTML = wordSet.unit;
-  cellPage.innerHTML = wordSet.page;
-  cellSection.innerHTML = wordSet.section;
+  //cellSource.innerHTML = wordSet.source;
+  //cellUnit.innerHTML = wordSet.unit;
+  //cellPage.innerHTML = wordSet.page;
+  //cellSection.innerHTML = wordSet.section;
+
+  cellDescription.innerHTML =  wordSet.unit + ": " + wordSet.section + " (" + wordSet.source + " - p. " + wordSet.page + ")";
+
 }
 
 
@@ -270,10 +276,15 @@ function buttonNext_onClick() {
   // document.getElementById("spanPronunciation").innerHTML = vocabulary.wordSets[wordSetIndex].words[wordIndex].pronunciation;
   // document.getElementById("spanMeaning").innerHTML = vocabulary.wordSets[wordSetIndex].words[wordIndex].meaning;
 
-  document.getElementById("spanForeign").innerHTML = selectedWords[randomWordIndex].foreign;
-  document.getElementById("spanGrammar").innerHTML = selectedWords[randomWordIndex].grammar;
-  document.getElementById("spanPronunciation").innerHTML = selectedWords[randomWordIndex].pronunciation;
-  document.getElementById("spanMeaning").innerHTML = selectedWords[randomWordIndex].meaning;
+  // document.getElementById("spanForeign").innerHTML = selectedWords[randomWordIndex].foreign;
+  // document.getElementById("spanGrammar").innerHTML = selectedWords[randomWordIndex].grammar;
+  // document.getElementById("spanPronunciation").innerHTML = selectedWords[randomWordIndex].pronunciation;
+  // document.getElementById("spanMeaning").innerHTML = selectedWords[randomWordIndex].meaning;
+
+  document.getElementById("textForeign").value = selectedWords[randomWordIndex].foreign;
+  document.getElementById("textGrammar").value = selectedWords[randomWordIndex].grammar;
+  document.getElementById("textPronunciation").value = selectedWords[randomWordIndex].pronunciation;
+  document.getElementById("textMeaning").value = selectedWords[randomWordIndex].meaning;
   
 }
 

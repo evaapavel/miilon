@@ -30,9 +30,14 @@ body {
 
 
 
-
+/*
 #tableSections, #tableSections td, #tableSections th {
   border: 1px solid #000000;
+}
+*/
+
+#tableSections {
+  /* border: 1px solid #000000; */
 }
 
 
@@ -49,12 +54,39 @@ body {
 
 
 #tableWord th {
-  /* text-align: left; */
-  text-align: right;
+  text-align: left;
+  /* text-align: right; */
 }
 
 
 #tableWord td, #tableWord th {
   padding: 4px;
+}
+
+
+
+
+
+
+#tableSettings td, #tableSettings th {
+  padding: 4px;
+}
+
+
+
+#textForeign {
+  width: 200px;
+}
+#textGrammar {
+  width: 30px;
+  /* width: 50px; */
+}
+#textPronunciation {
+  width: 100px;
+}
+#textMeaning {
+  /* width: 350px; */
+  width: 360px;
+  /* width: 370px; */
 }
 
