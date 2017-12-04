@@ -110,6 +110,42 @@ var vocabulary = {
 
 
 
+// Settings and preferences.
+var settings = {
+  // True :-: foreign words go first, the user must provide their native langauge translation,
+  // false :-: native language first, the user provides a translation into the foreign language.
+  "isForeignFirst": false,
+  //"isForeignFirst": true,
+  // True :-: words are changed automatically after a certain time delay,
+  // false :-: words are changed after the user clicks a button.
+  "isAutoNext": false,
+  // Current time delay for the "auto next" function.
+  "timeDelay": 3,
+  //"timeDelay": 5,
+  // True :-: interactive mode (the user enters translations into a text box),
+  // false :-: non-interactive mode (the user just clicks the "Next" button, or waits for an auto change).
+  "isInteractive": false,
+  // True :-: words are provided in the original order (taken from the original Json data source),
+  // false :-: words are presented in a random order.
+  "isOriginalOrder": false
+};
+
+putSettingsToPageControls();
+
+
+
+
+// Context.
+var context = {
+  // Word sections selected by the user to appear in the test sequence.
+  "selectedSections": [],
+  // Index of the current word presented to the user in the test section of the page.
+  "currentWordIndex": -1
+};
+
+
+
+
 // HTML table with vocabulary "sections".
 var sectionsTable = document.getElementById("tableSections");
 // Rows of the sections table.
@@ -139,7 +175,7 @@ for (var i = 0; i < vocabulary.wordSets.length; i++) {
 
   var cellDescription = newRow.insertCell(1);
   
-  cellMark.innerHTML = "<input type='checkbox' id='checkboxMarkSection" + i + "' />";
+  cellMark.innerHTML = "<input type='checkbox' id='checkboxMarkSection" + i + "' onclick='checkboxMarkSection_Click()' />";
 
   //cellSource.innerHTML = wordSet.source;
   //cellUnit.innerHTML = wordSet.unit;
@@ -149,6 +185,7 @@ for (var i = 0; i < vocabulary.wordSets.length; i++) {
   cellDescription.innerHTML =  wordSet.unit + ": " + wordSet.section + " (" + wordSet.source + " - p. " + wordSet.page + ")";
 
 }
+
 
 
 
@@ -218,13 +255,31 @@ function getRandomIntFromInterval(minIntIncl, maxIntIncl) {
 
 
 // ***
+// Handles the Click event on the checkboxes checkboxMarkSection0, checkboxMarkSection1, ...
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
+function checkboxMarkSection_Click() {
+  // Disable the "Next word" button.
+  document.getElementById("buttonNext").disabled = true;
+  // Enable the "Refresh the word set" button.
+  document.getElementById("buttonRefresh").disabled = false;
+}
+
+
+
+
+//function buttonRefresh_onClick() {
+// ***
 // Handles the Click event on the button buttonRefresh.
 // ***
 // Parameters:
 // ***
 // Returns:
 // ***
-function buttonRefresh_onClick() {
+function buttonRefresh_Click() {
 
   selectedWords = [];
   
@@ -247,6 +302,11 @@ function buttonRefresh_onClick() {
     }
   }
 
+  // Enable the "Next word" button.
+  document.getElementById("buttonNext").disabled = false;
+  // Disable the "Refresh the word set" button.
+  document.getElementById("buttonRefresh").disabled = true;
+
   //alert("selectedWords.length = " + selectedWords.length);
 
 }
@@ -254,6 +314,7 @@ function buttonRefresh_onClick() {
 
 
 
+//function buttonNext_onClick() {
 // ***
 // Handles the Click event on the button buttonNext.
 // ***
@@ -261,7 +322,7 @@ function buttonRefresh_onClick() {
 // ***
 // Returns:
 // ***
-function buttonNext_onClick() {
+function buttonNext_Click() {
   
   //alert("Inside buttonNext_onClick...");
   //alert("selectedWords.length = " + selectedWords.length);
@@ -291,6 +352,81 @@ function buttonNext_onClick() {
 
 
 
+function radioForeignFirst_Click() {
+  getSettingsFromPageControls();
+}
+
+function radioNativeFirst_Click() {
+  getSettingsFromPageControls();
+}
+
+function checkboxAutoNext_Click() {
+  getSettingsFromPageControls();
+}
+
+function selectTimeDelay_Click() {
+  getSettingsFromPageControls();
+}
+
+function checkboxInteractive_Click() {
+  getSettingsFromPageControls();
+}
+
+function radioOriginalOrder_Click() {
+  getSettingsFromPageControls();
+}
+
+function radioRandomOrder_Click() {
+  getSettingsFromPageControls();
+}
+
+
+
+
+// ***
+// Transforms the settings (from the global variable "settings") into controls on the page.
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
+function putSettingsToPageControls() {
+
+  // "isForeignFirst":
+  document.getElementById("radioForeignFirst").checked = settings.isForeignFirst;
+  document.getElementById("radioNativeFirst").checked = ( ! settings.isForeignFirst );
+  
+  // "isAutoNext":
+  document.getElementById("checkboxAutoNext").checked = settings.isAutoNext;
+  
+  // "timeDelay":
+  document.getElementById("selectTimeDelay").value = settings.timeDelay.toString();
+  
+  // "isInteractive":
+  document.getElementById("checkboxInteractive").checked = settings.isInteractive;
+  
+  // "isOriginalOrder":
+  document.getElementById("radioOriginalOrder").checked = settings.isOriginalOrder;
+  document.getElementById("radioRandomOrder").checked = ( ! settings.isOriginalOrder );
+
+}
+
+
+
+
+// ***
+// Transforms the page controls' state into the global variable "settings".
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
+function getSettingsFromPageControls() {
+}
+
+
+
+
 function startTimer(duration, display) {
 
   var timer = duration, minutes, seconds;
@@ -306,7 +442,8 @@ function startTimer(duration, display) {
 
     // ***
     if (timer % 4 == 0) {
-      buttonNext_onClick();
+      //buttonNext_onClick();
+      buttonNext_Click();
     }
     // ***
 
@@ -320,7 +457,8 @@ function startTimer(duration, display) {
 
 
 
-function buttonTimer_onClick() {
+//function buttonTimer_onClick() {
+function buttonTimer_Click() {
   var fiveMinutes = 60 * 5;
   var display = document.querySelector('#spanTime');
   startTimer(fiveMinutes, display);
