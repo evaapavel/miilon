@@ -194,51 +194,149 @@ putSettingsToPageControls();
 // Context.
 var context = {
   // Word sections selected by the user to appear in the test sequence.
-  "selectedSections": [],
+  //"selectedSections": [],
+  "selectedSections": [0, 1, 3],
+  // Words to be offerred to the user.
+  "selectedWords" : [],
   // Index of the current word presented to the user in the test section of the page.
   "currentWordIndex": -1
 };
 
+initSectionSelector();
+putSelectedSectionsToPageControls();
+refreshSelectedWords();
 
 
 
-// HTML table with vocabulary "sections".
-var sectionsTable = document.getElementById("tableSections");
-// Rows of the sections table.
-var sectionsTableRows = sectionsTable.children;
 
-// Words to be offerred to the user.
-var selectedWords = [];
+// ***
+// Initializes the area of checkboxes to select relevant sections.
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
+function initSectionSelector() {
+
+  // HTML table with vocabulary "sections".
+  var sectionsTable = document.getElementById("tableSections");
+  // Rows of the sections table.
+  var sectionsTableRows = sectionsTable.children;
+
+  //// Words to be offerred to the user.
+  //var selectedWords = [];
 
 
-//for (var wordSet : vocabulary.wordSets) {
-//  alert(wordSet.section);
-//}
-for (var i = 0; i < vocabulary.wordSets.length; i++) {
+  //for (var wordSet : vocabulary.wordSets) {
+  //  alert(wordSet.section);
+  //}
+  for (var i = 0; i < vocabulary.wordSets.length; i++) {
 
-  var wordSet = vocabulary.wordSets[i];
-  //alert(wordSet.section);
-  //sectionsTable.children
-  //sectionsTableRows.
-  var newRow = sectionsTable.insertRow(i + 1);
+    var wordSet = vocabulary.wordSets[i];
+    //alert(wordSet.section);
+    //sectionsTable.children
+    //sectionsTableRows.
+    var newRow = sectionsTable.insertRow(i + 1);
 
-  var cellMark = newRow.insertCell(0);
+    var cellMark = newRow.insertCell(0);
 
-  //var cellSource = newRow.insertCell(1);
-  //var cellUnit = newRow.insertCell(2);
-  //var cellPage = newRow.insertCell(3);
-  //var cellSection = newRow.insertCell(4);
+    //var cellSource = newRow.insertCell(1);
+    //var cellUnit = newRow.insertCell(2);
+    //var cellPage = newRow.insertCell(3);
+    //var cellSection = newRow.insertCell(4);
 
-  var cellDescription = newRow.insertCell(1);
+    var cellDescription = newRow.insertCell(1);
+    
+    cellMark.innerHTML = "<input type='checkbox' id='checkboxMarkSection" + i + "' onclick='checkboxMarkSection_Click()' />";
+
+    //cellSource.innerHTML = wordSet.source;
+    //cellUnit.innerHTML = wordSet.unit;
+    //cellPage.innerHTML = wordSet.page;
+    //cellSection.innerHTML = wordSet.section;
+
+    cellDescription.innerHTML =  wordSet.unit + ": " + wordSet.section + " (" + wordSet.source + " - p. " + wordSet.page + ")";
+
+  }
+
+}
+
+
+
+
+// ***
+// Takes the array of selected sections from the context and marks the respective checkboxes in the page.
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
+function putSelectedSectionsToPageControls() {
+
+  // Mark the checkboxes according to the array of selected sections.
+  for (var i = 0; i < vocabulary.wordSets.length; i++) {
+    if (context.selectedSections.indexOf(i) >= 0) {
+      document.getElementById("checkboxMarkSection" + i).checked = true;
+    } else {
+      document.getElementById("checkboxMarkSection" + i).checked = false;
+    }
+  }
+
+}
+
+
+
+
+// ***
+// Populates the array of selected sections (in the context) according to the status of their respective checkboxes in the page.
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
+function getSelectedSectionsFromPageControls() {
+
+  // Clear the array of selected sections.
+  context.selectedSections = [];
+
+  // Populate the array according to their respective checkboxes.
+  var selectedSectionsCounter = 0;
+  for (var i = 0; i < vocabulary.wordSets.length; i++) {
+    if (document.getElementById("checkboxMarkSection" + i).checked) {
+      context.selectedSections[selectedSectionsCounter] = i;
+      selectedSectionsCounter++;
+    }
+  }
+
+}
+
+
+
+
+// ***
+// Refreshes the array of selected words using the array of selected sections.
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
+function refreshSelectedWords() {
+
+  //context.selectedWords = [];
+  var selectedWordCounter = 0;
   
-  cellMark.innerHTML = "<input type='checkbox' id='checkboxMarkSection" + i + "' onclick='checkboxMarkSection_Click()' />";
-
-  //cellSource.innerHTML = wordSet.source;
-  //cellUnit.innerHTML = wordSet.unit;
-  //cellPage.innerHTML = wordSet.page;
-  //cellSection.innerHTML = wordSet.section;
-
-  cellDescription.innerHTML =  wordSet.unit + ": " + wordSet.section + " (" + wordSet.source + " - p. " + wordSet.page + ")";
+  for (var i = 0; i < vocabulary.wordSets.length; i++) {
+    //var cellMark = sectionsTableRows[i].children[0];
+    //var checkboxMark = document.getElementById("checkboxMarkSection" + i);
+    //if (checkboxMark.checked) {
+    if (context.selectedSections.indexOf(i) >= 0) {
+      var currentSection = vocabulary.wordSets[i].words;
+      //for (var j = 0; j < vocabulary.wordSets[i].words.length
+      for (var j = 0; j < currentSection.length; j++) {
+        context.selectedWords[selectedWordCounter] = currentSection[j];
+        selectedWordCounter++;
+      }
+    }
+  }
 
 }
 
@@ -337,33 +435,38 @@ function checkboxMarkSection_Click() {
 // ***
 function buttonRefresh_Click() {
 
-  selectedWords = [];
+  // Get the array of sections selected by the user.
+  //context.selectedSections = [];
+  getSelectedSectionsFromPageControls();
   
   //alert("Inside buttonRefresh_onClick...");
-  //alert("selectedWords.length = " + selectedWords.length);
+  //alert("selectedWords.length = " + context.selectedWords.length);
 
-  //selectedWords = [];
-  var selectedWordCounter = 0;
+  ////context.selectedWords = [];
+  //var selectedWordCounter = 0;
   
-  for (var i = 0; i < vocabulary.wordSets.length; i++) {
-    //var cellMark = sectionsTableRows[i].children[0];
-    var checkboxMark = document.getElementById("checkboxMarkSection" + i);
-    if (checkboxMark.checked) {
-      var currentSection = vocabulary.wordSets[i].words;
-      //for (var j = 0; j < vocabulary.wordSets[i].words.length
-      for (var j = 0; j < currentSection.length; j++) {
-        selectedWords[selectedWordCounter] = currentSection[j];
-        selectedWordCounter++;
-      }
-    }
-  }
+  //for (var i = 0; i < vocabulary.wordSets.length; i++) {
+  //  //var cellMark = sectionsTableRows[i].children[0];
+  //  var checkboxMark = document.getElementById("checkboxMarkSection" + i);
+  //  if (checkboxMark.checked) {
+  //    var currentSection = vocabulary.wordSets[i].words;
+  //    //for (var j = 0; j < vocabulary.wordSets[i].words.length
+  //    for (var j = 0; j < currentSection.length; j++) {
+  //      context.selectedWords[selectedWordCounter] = currentSection[j];
+  //      selectedWordCounter++;
+  //    }
+  //  }
+  //}
+
+  // Refresh the array of selected words.
+  refreshSelectedWords();
 
   // Enable the "Next word" button.
   document.getElementById("buttonNext").disabled = false;
   // Disable the "Refresh the word set" button.
   document.getElementById("buttonRefresh").disabled = true;
 
-  //alert("selectedWords.length = " + selectedWords.length);
+  //alert("selectedWords.length = " + context.selectedWords.length);
 
 }
 
@@ -381,10 +484,10 @@ function buttonRefresh_Click() {
 function buttonNext_Click() {
   
   //alert("Inside buttonNext_onClick...");
-  //alert("selectedWords.length = " + selectedWords.length);
+  //alert("selectedWords.length = " + context.selectedWords.length);
 
-  //var randomWordIndex = getRandomIntFromInterval(0, selectedWords.length);
-  var randomWordIndex = getRandomIntFromInterval(0, selectedWords.length - 1);
+  //var randomWordIndex = getRandomIntFromInterval(0, context.selectedWords.length);
+  var randomWordIndex = getRandomIntFromInterval(0, context.selectedWords.length - 1);
 
   //alert("randomWordIndex = " + randomWordIndex);
   
@@ -393,15 +496,15 @@ function buttonNext_Click() {
   // document.getElementById("spanPronunciation").innerHTML = vocabulary.wordSets[wordSetIndex].words[wordIndex].pronunciation;
   // document.getElementById("spanMeaning").innerHTML = vocabulary.wordSets[wordSetIndex].words[wordIndex].meaning;
 
-  // document.getElementById("spanForeign").innerHTML = selectedWords[randomWordIndex].foreign;
-  // document.getElementById("spanGrammar").innerHTML = selectedWords[randomWordIndex].grammar;
-  // document.getElementById("spanPronunciation").innerHTML = selectedWords[randomWordIndex].pronunciation;
-  // document.getElementById("spanMeaning").innerHTML = selectedWords[randomWordIndex].meaning;
+  // document.getElementById("spanForeign").innerHTML = context.selectedWords[randomWordIndex].foreign;
+  // document.getElementById("spanGrammar").innerHTML = context.selectedWords[randomWordIndex].grammar;
+  // document.getElementById("spanPronunciation").innerHTML = context.selectedWords[randomWordIndex].pronunciation;
+  // document.getElementById("spanMeaning").innerHTML = context.selectedWords[randomWordIndex].meaning;
 
-  document.getElementById("textForeign").value = selectedWords[randomWordIndex].foreign;
-  document.getElementById("textGrammar").value = selectedWords[randomWordIndex].grammar;
-  document.getElementById("textPronunciation").value = selectedWords[randomWordIndex].pronunciation;
-  document.getElementById("textMeaning").value = selectedWords[randomWordIndex].meaning;
+  document.getElementById("textForeign").value = context.selectedWords[randomWordIndex].foreign;
+  document.getElementById("textGrammar").value = context.selectedWords[randomWordIndex].grammar;
+  document.getElementById("textPronunciation").value = context.selectedWords[randomWordIndex].pronunciation;
+  document.getElementById("textMeaning").value = context.selectedWords[randomWordIndex].meaning;
   
 }
 
@@ -478,6 +581,22 @@ function putSettingsToPageControls() {
 // Returns:
 // ***
 function getSettingsFromPageControls() {
+
+  // "isForeignFirst":
+  settings.isForeignFirst = Boolean(document.getElementById("radioForeignFirst").checked);
+  
+  // "isAutoNext":
+  settings.isAutoNext = Boolean(document.getElementById("checkboxAutoNext").checked);
+  
+  // "timeDelay":
+  settings.timeDelay = Number(document.getElementById("selectTimeDelay").value);
+  
+  // "isInteractive":
+  settings.isInteractive = Boolean(document.getElementById("checkboxInteractive").checked);
+  
+  // "isOriginalOrder":
+  settings.isOriginalOrder = Boolean(document.getElementById("radioOriginalOrder").checked);
+
 }
 
 
