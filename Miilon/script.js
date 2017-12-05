@@ -22,6 +22,16 @@ var vocabulary = {
         { "foreign": "parler", "grammar": "vi", "pronunciation": "parle.", "meaning": "mluvit" },
         { "foreign": "rugir", "grammar": "vi", "pronunciation": "rüži:r", "meaning": "řvát" },
         { "foreign": "siffler", "grammar": "vi", "pronunciation": "sifle.", "meaning": "pískat, hvízdat, syčet, fičet, sípat" },
+
+        { "foreign": "abeille", "grammar": "nf", "pronunciation": "abej", "meaning": "včela" },
+        { "foreign": "chat", "grammar": "nm", "pronunciation": "ša", "meaning": "kočka, kocour" },
+        { "foreign": "chien", "grammar": "nm", "pronunciation": "šje~", "meaning": "pes" },
+        { "foreign": "coq", "grammar": "nm", "pronunciation": "kok", "meaning": "kohout" },
+        { "foreign": "loup", "grammar": "nm", "pronunciation": "lu", "meaning": "vlk" },
+        { "foreign": "mouton", "grammar": "nm", "pronunciation": "muto~", "meaning": "skopec, beránek" },
+        { "foreign": "oiseau", "grammar": "nm", "pronunciation": "u^azo.", "meaning": "pták" },
+        { "foreign": "perroquet", "grammar": "nm", "pronunciation": "peroke", "meaning": "papoušek" },
+        { "foreign": "vache", "grammar": "nf", "pronunciation": "vaš", "meaning": "kráva" },
       ]
     },
   
@@ -56,6 +66,29 @@ var vocabulary = {
         { "foreign": "paon", "grammar": "nm", "pronunciation": "pa~", "meaning": "páv" },
         { "foreign": "caille", "grammar": "nf", "pronunciation": "ka:j", "meaning": "křepelka" },
         { "foreign": "serpent", "grammar": "nm", "pronunciation": "serpa~", "meaning": "had" },
+
+        { "foreign": "roucouler", "grammar": "vi", "pronunciation": "rukule.", "meaning": "cukrovat, vrkat" },
+        { "foreign": "pépier", "grammar": "vi", "pronunciation": "pe.pje.", "meaning": "pípat, štěbetat" },
+        { "foreign": "caqueter", "grammar": "vi", "pronunciation": "kakte.", "meaning": "kdákat" },
+        { "foreign": "jacasser", "grammar": "vi", "pronunciation": "žakase.", "meaning": "štěbetat" },
+        { "foreign": "blatérer", "grammar": "vi", "pronunciation": "blate.re.", "meaning": "bečet (o beranu), mečet (o velbloudu)" },
+        { "foreign": "'huer", "grammar": "vi", "pronunciation": "üe.", "meaning": "houkat (o sově)" },
+        { "foreign": "râler", "grammar": "vi", "pronunciation": "rale.", "meaning": "chroptět, chrčet, řvát (tygr)" },
+        { "foreign": "craquer", "grammar": "vi", "pronunciation": "krake.", "meaning": "praskat, skřípat, vrzat" },
+        { "foreign": "baréter", "grammar": "vi", "pronunciation": "bare.te.", "meaning": "troubit (o slonu)" },
+        { "foreign": "hennir", "grammar": "vi", "pronunciation": "eni:r", "meaning": "řehtat, ržát (o koni)" },
+        { "foreign": "'hululer", "grammar": "vi", "pronunciation": "ülüle.", "meaning": "houkat (o sově)" },
+        { "foreign": "coasser", "grammar": "vi", "pronunciation": "koase.", "meaning": "kvákat, kuňkat" },
+        { "foreign": "piauler", "grammar": "vi", "pronunciation": "pjo.le.", "meaning": "pípat" },
+        { "foreign": "croasser", "grammar": "vi", "pronunciation": "kroase.", "meaning": "krákorat, krákat (o vráně)" },
+        { "foreign": "cajoler", "grammar": "vi", "pronunciation": "kažole.", "meaning": "křičet (o strace, sojce)" },
+        { "foreign": "bramer", "grammar": "vi", "pronunciation": "brame.", "meaning": "troubit (o jelenu)" },
+        { "foreign": "braire", "grammar": "vi", "pronunciation": "bre:r", "meaning": "hýkat (o oslu)" },
+        { "foreign": "cancaner", "grammar": "vi", "pronunciation": "ka~kane.", "meaning": "káchat (o kachně)" },
+        { "foreign": "mugir", "grammar": "vi", "pronunciation": "müži:r", "meaning": "bučet" },
+        { "foreign": "glouglouter", "grammar": "vi", "pronunciation": "gluglute.", "meaning": "hudrovat (krocan)" },
+        { "foreign": "brailler", "grammar": "vi", "pronunciation": "braje.", "meaning": "řvát, vřeštět (páv)" },
+        { "foreign": "margoter", "grammar": "vi", "pronunciation": "margote.", "meaning": "volat (o křepelce)" },
       ]
     },
   
@@ -100,6 +133,29 @@ var vocabulary = {
         { "foreign": "régional, ale, aux", "grammar": "adj", "pronunciation": "re.žjonal", "meaning": "krajský, regionální" },
         { "foreign": "revue", "grammar": "nf", "pronunciation": "r@vü", "meaning": "revue (časopis)" },
         { "foreign": "tirage", "grammar": "nm", "pronunciation": "tira:ž", "meaning": "vlečení, tahání, kopírování, vystavení směnky, tisk, náklad (knihy)" },
+
+        { "foreign": "avoir bonne presse", "grammar": "", "pronunciation": "avu^a:r bon pres", "meaning": "mít dobrou kritiku" },
+        { "foreign": "une feuille de chou", "grammar": "", "pronunciation": "ün föj d@ šu", "meaning": "zelný list; plátek (noviny)" },
+        { "foreign": "la rubrique des chiens écrasés", "grammar": "", "pronunciation": "rübrik de. šje~ e.kraze.", "meaning": "novinová rubrika s příspěvky na různá nepříliš důležitá témata" },
+        { "foreign": "un torchon", "grammar": "", "pronunciation": "ö~ toršo~", "meaning": "hadr, bezcenný spis" },
+      ]
+    },
+  
+    {
+      "source": "ÉDITO B2",
+      "unit": "Unité 3",
+      "page": 40,
+      "section": "LES TYPES D'ARTICLES",
+      "words": [
+        { "foreign": "billet", "grammar": "nm", "pronunciation": "bije", "meaning": "malý novinový článek (často polemický nebo satirický)" },
+        { "foreign": "brève", "grammar": "nf", "pronunciation": "bre:v", "meaning": "zprávička (na poslední chvíli nebo nepříliš důležitá)" },
+        { "foreign": "chronique", "grammar": "nf", "pronunciation": "kronik", "meaning": "kronika; rubrika (v novinách)" },
+        { "foreign": "critique", "grammar": "nf", "pronunciation": "kritik", "meaning": "kritika, odborný posudek" },
+        { "foreign": "dépêche", "grammar": "nf", "pronunciation": "de.peš", "meaning": "zpráva (stručná)" },
+        { "foreign": "éditorial", "grammar": "nm", "pronunciation": "e.ditorjal", "meaning": "editorial, úvodník" },
+        { "foreign": "enquête", "grammar": "nf", "pronunciation": "a~ket", "meaning": "průzkum, anketa" },
+        { "foreign": "entretien", "grammar": "nm", "pronunciation": "a~tr@tje~", "meaning": "rozhovor" },
+        { "foreign": "reportage", "grammar": "nm", "pronunciation": "r@porta:ž", "meaning": "reportáž" },
       ]
     },
   
