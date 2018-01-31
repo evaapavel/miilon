@@ -9,168 +9,222 @@
   </head>
   
   <body>
+
+
+    <div id="divAll">
   
-    <h1>Miilon</h1>
+      <h1>Miilon</h1>
 
-    <h3>Test</h3>
-    
-    <table id="tableWord">
-      <tr>
-        <th colspan="3">Français</th>
-      </tr>
-      <tr>
-        <td><span id="spanForeign"><input type="text" id="textForeign" /></span></td>
-        <td><span id="spanGrammar"><input type="text" id="textGrammar" /></span></td>
-        <td><span id="spanPronunciation"><input type="text" id="textPronunciation" /></span></td>
-      <tr>
-      <tr>
-        <th colspan="3">Tchèque</th>
-      </tr>
-      <tr>
-        <td colspan="3"><span id="spanMeaning"><input type="text" id="textMeaning" /></span></td>
-      <tr>
-      <tr>
-        <th colspan="3">Votre jeu</th>
-      </tr>
-      <tr>
-        <td colspan="3"><span id="spanUserResponse"><input type="text" id="textUserResponse" /></span></td>
-      <tr>
-    </table>
-
-    <br/>
-    <!--
-    <br/>
-    -->
-
-    <input type="button" id="buttonNext" value="Mot suivant" onclick="buttonNext_Click()" disabled="disabled" />
-
-    <br/>
-    <br/>
-
-    <h3>Choisir des sections à aprendre</h3>
-
-    <table id="tableSections">
+      <h3>Test</h3>
 
       <!--
-      <tr>
-        <th>Marquer</th>
-        <th>Source</th>
-        <th>Unité</th>
-        <th>Page</th>
-        <th>Section</th>
-      </tr>
+      <table id="tableWord">
+        <tr>
+          <th colspan="3">Français</th>
+        </tr>
+        <tr>
+          <td><span id="spanForeign"><input type="text" id="textForeign" /></span></td>
+          <td><span id="spanGrammar"><input type="text" id="textGrammar" /></span></td>
+          <td><span id="spanPronunciation"><input type="text" id="textPronunciation" /></span></td>
+        <tr>
+        <tr>
+          <th colspan="3">Tchèque</th>
+        </tr>
+        <tr>
+          <td colspan="3"><span id="spanMeaning"><input type="text" id="textMeaning" /></span></td>
+        <tr>
+        <tr>
+          <th colspan="3">Votre jeu</th>
+        </tr>
+        <tr>
+          <td colspan="3"><span id="spanUserResponse"><input type="text" id="textUserResponse" /></span></td>
+        <tr>
+      </table>
+      -->
+      
+      <table id="tableWord">
+          <tr>
+            <th colspan="1">Français</th>
+          </tr>
+          <tr>
+            <td><span id="spanForeign"><input type="text" id="textForeign" /></span></td>
+          </tr>
+          <tr>
+            <td><span id="spanGrammar"><input type="text" id="textGrammar" /></span></td>
+          </tr>
+          <tr>
+            <td><span id="spanPronunciation"><input type="text" id="textPronunciation" /></span></td>
+          <tr>
+          <tr>
+            <th colspan="1">Tchèque</th>
+          </tr>
+          <tr>
+            <td colspan="3"><span id="spanMeaning"><input type="text" id="textMeaning" /></span></td>
+          <tr>
+          <tr>
+            <th colspan="3">Votre tuyau</th>
+          </tr>
+          <tr>
+            <td colspan="3"><span id="spanUserResponse"><input type="text" id="textUserResponse" /></span></td>
+          <tr>
+        </table>
+  
+      <br/>
+      <!--
+      <br/>
       -->
 
-      <tr>
-        <td></td>
-        <td></td>
+      <input type="hidden" id="hiddenTestState" value="showNext" />
+      <input type="hidden" id="hiddenWordIndex" value="" />
+      
+      <input type="button" id="buttonNext" value="Mot suivant" onclick="buttonNext_Click()" disabled="disabled" />
+
+      <br/>
+
+      <br/>
+      <br/>
+      
+      <input type="hidden" id="hiddenIsSettingsVisible" value="true" />
+      
+      <input type="button" id="buttonShowHideSettings" value="Cacher" onclick="buttonShowHideSettings_Click()" />
+      
+
+      <div id="divSettings">
+
+        <br/>
+        <br/>
+
+        <h3>Choisir des sections à aprendre</h3>
+
+        <table id="tableSections">
+
+          <!--
+          <tr>
+            <th>Marquer</th>
+            <th>Source</th>
+            <th>Unité</th>
+            <th>Page</th>
+            <th>Section</th>
+          </tr>
+          -->
+
+          <tr>
+            <td></td>
+            <td></td>
+            <!--
+            <td></td>
+            <td></td>
+            <td></td>
+            -->
+          </tr>
+
+        </table>
+
+        <br/>
         <!--
-        <td></td>
-        <td></td>
-        <td></td>
+        <br/>
         -->
-      </tr>
 
-    </table>
+        <input type="button" id="buttonRefresh" value="Rafraîchir la série de mots" onclick="buttonRefresh_Click()" />
 
-    <br/>
-    <!--
-    <br/>
-    -->
+        <br/>
+        <br/>
 
-    <input type="button" id="buttonRefresh" value="Rafraîchir la série de mots" onclick="buttonRefresh_Click()" />
+        <h3>Manière de tester</h3>
 
-    <br/>
-    <br/>
+        <table id="tableSettings">
+          <tr>
+            <td><input type="radio" name="radioGroupFirst" id="radioForeignFirst" onclick="radioForeignFirst_Click()" /></td>
+            <td>Traduire en tchèque</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="radio" name="radioGroupFirst" id="radioNativeFirst" onclick="radioNativeFirst_Click()" /></td>
+            <td>Traduire en français</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="checkboxAutoNext" onclick="checkboxAutoNext_Click()" /></td>
+            <td>Échanger les mots automatiquement chaque</td>
+            <td>
+              <select id="selectTimeDelay" onclick="selectTimeDelay_Click()" >
+                <option value="1">1 seconde</option>
+                <option value="3">3 secondes</option>
+                <option value="5">5 secondes</option>
+                <option value="10">10 secondes</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="checkboxInteractive" onclick="checkboxInteractive_Click()" /></td>
+            <td>L'utilisateur doit deviner des mots en tapant</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="radio" name="radioGroupOrder" id="radioOriginalOrder" onclick="radioOriginalOrder_Click()" /></td>
+            <td>Ordre original</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="radio" name="radioGroupOrder" id="radioRandomOrder" onclick="radioRandomOrder_Click()" /></td>
+            <td>Ordre aléatoire</td>
+            <td></td>
+          </tr>
+        </table>
 
-    <h3>Manière de tester</h3>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
 
-    <table id="tableSettings">
-      <tr>
-        <td><input type="radio" name="radioGroupFirst" id="radioForeignFirst" onclick="radioForeignFirst_Click()" /></td>
-        <td>Traduire en tchèque</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><input type="radio" name="radioGroupFirst" id="radioNativeFirst" onclick="radioNativeFirst_Click()" /></td>
-        <td>Traduire en français</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><input type="checkbox" id="checkboxAutoNext" onclick="checkboxAutoNext_Click()" /></td>
-        <td>Échanger les mots automatiquement chaque</td>
-        <td>
-          <select id="selectTimeDelay" onclick="selectTimeDelay_Click()" >
-            <option value="1">1 seconde</option>
-            <option value="3">3 secondes</option>
-            <option value="5">5 secondes</option>
-            <option value="10">10 secondes</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td><input type="checkbox" id="checkboxInteractive" onclick="checkboxInteractive_Click()" /></td>
-        <td>L'utilisateur doit deviner des mots en tapant</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><input type="radio" name="radioGroupOrder" id="radioOriginalOrder" onclick="radioOriginalOrder_Click()" /></td>
-        <td>Ordre original</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><input type="radio" name="radioGroupOrder" id="radioRandomOrder" onclick="radioRandomOrder_Click()" /></td>
-        <td>Ordre aléatoire</td>
-        <td></td>
-      </tr>
-    </table>
+        <br/>
+        <br/>
+        
+        <div>
+          L'enregistrement sera fermé en <span id="spanTime">05:00</span> minutes!
+        </div>
 
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+        <br/>
+        <br/>
 
-    <br/>
-    <br/>
-    
-    <div>
-      L'enregistrement sera fermé en <span id="spanTime">05:00</span> minutes!
+        <input type="button" id="buttonTimer" value="Temps" onclick="buttonTimer_Click()" />
+
+
+      </div>
+
+
     </div>
 
-    <br/>
-    <br/>
-
-    <input type="button" id="buttonTimer" value="Temps" onclick="buttonTimer_Click()" />
     
         <script src="script.js"></script>
   

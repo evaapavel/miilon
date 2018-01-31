@@ -473,6 +473,44 @@ function buttonRefresh_Click() {
 
 
 
+// //function buttonNext_onClick() {
+// // ***
+// // Handles the Click event on the button buttonNext.
+// // ***
+// // Parameters:
+// // ***
+// // Returns:
+// // ***
+// function buttonNext_Click() {
+  
+//   //alert("Inside buttonNext_onClick...");
+//   //alert("selectedWords.length = " + context.selectedWords.length);
+
+//   //var randomWordIndex = getRandomIntFromInterval(0, context.selectedWords.length);
+//   var randomWordIndex = getRandomIntFromInterval(0, context.selectedWords.length - 1);
+
+//   //alert("randomWordIndex = " + randomWordIndex);
+  
+//   // document.getElementById("spanForeign").innerHTML = vocabulary.wordSets[wordSetIndex].words[wordIndex].foreign;
+//   // document.getElementById("spanGrammar").innerHTML = vocabulary.wordSets[wordSetIndex].words[wordIndex].grammar;
+//   // document.getElementById("spanPronunciation").innerHTML = vocabulary.wordSets[wordSetIndex].words[wordIndex].pronunciation;
+//   // document.getElementById("spanMeaning").innerHTML = vocabulary.wordSets[wordSetIndex].words[wordIndex].meaning;
+
+//   // document.getElementById("spanForeign").innerHTML = context.selectedWords[randomWordIndex].foreign;
+//   // document.getElementById("spanGrammar").innerHTML = context.selectedWords[randomWordIndex].grammar;
+//   // document.getElementById("spanPronunciation").innerHTML = context.selectedWords[randomWordIndex].pronunciation;
+//   // document.getElementById("spanMeaning").innerHTML = context.selectedWords[randomWordIndex].meaning;
+
+//   document.getElementById("textForeign").value = context.selectedWords[randomWordIndex].foreign;
+//   document.getElementById("textGrammar").value = context.selectedWords[randomWordIndex].grammar;
+//   document.getElementById("textPronunciation").value = context.selectedWords[randomWordIndex].pronunciation;
+//   document.getElementById("textMeaning").value = context.selectedWords[randomWordIndex].meaning;
+  
+// }
+
+
+
+
 //function buttonNext_onClick() {
 // ***
 // Handles the Click event on the button buttonNext.
@@ -482,29 +520,105 @@ function buttonRefresh_Click() {
 // Returns:
 // ***
 function buttonNext_Click() {
+  handleNextTestPhase();
+}
+
+
+
+
+// ***
+// Handles a state transition in case
+// the user clicks the button "buttonNext".
+//
+// The states currently used are as follows:
+// - showNext - Display a new word to the user.
+// - waitForTip - Wait for the user's tip as to the translation.
+// - showCorrect - Display the correct translation to the user.
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
+function handleNextTestPhase() {
   
   //alert("Inside buttonNext_onClick...");
   //alert("selectedWords.length = " + context.selectedWords.length);
 
-  //var randomWordIndex = getRandomIntFromInterval(0, context.selectedWords.length);
-  var randomWordIndex = getRandomIntFromInterval(0, context.selectedWords.length - 1);
+  switch (document.getElementById("hiddenTestState").value) {
 
-  //alert("randomWordIndex = " + randomWordIndex);
-  
-  // document.getElementById("spanForeign").innerHTML = vocabulary.wordSets[wordSetIndex].words[wordIndex].foreign;
-  // document.getElementById("spanGrammar").innerHTML = vocabulary.wordSets[wordSetIndex].words[wordIndex].grammar;
-  // document.getElementById("spanPronunciation").innerHTML = vocabulary.wordSets[wordSetIndex].words[wordIndex].pronunciation;
-  // document.getElementById("spanMeaning").innerHTML = vocabulary.wordSets[wordSetIndex].words[wordIndex].meaning;
+    case "showNext":
+      // Display a new word to the user.
+      // Select a word randomly.
+      //var randomWordIndex = getRandomIntFromInterval(0, context.selectedWords.length);
+      var randomWordIndex = getRandomIntFromInterval(0, context.selectedWords.length - 1);
+      // ***
+      //alert("randomWordIndex = " + randomWordIndex);
+      // ***
+      //document.getElementById("textForeign").value = context.selectedWords[randomWordIndex].foreign;
+      //document.getElementById("textGrammar").value = context.selectedWords[randomWordIndex].grammar;
+      //document.getElementById("textPronunciation").value = context.selectedWords[randomWordIndex].pronunciation;
+      document.getElementById("textMeaning").value = context.selectedWords[randomWordIndex].meaning;
+      // ***
+      //document.getElementById("textUserResponse").value
+      // ***
+      // Clear the other fields.
+      document.getElementById("textForeign").value = "";
+      document.getElementById("textGrammar").value = "";
+      document.getElementById("textPronunciation").value = "";
+      // ***
+      document.getElementById("textUserResponse").value = "";
+      // ***
+      // Store the selected word index in a hidden field.
+      document.getElementById("hiddenWordIndex").value = randomWordIndex;
+      // Change the label of the buttonNext button.
+      document.getElementById("buttonNext").value = "Veuillez écrire votre tuyau";
+      // Change the current state of the test.
+      document.getElementById("hiddenTestState").value = "waitForTip";
+      // ***
+      break;
+    
+    case "waitForTip":
+      // Wait for the user's tip as to the translation.
+      // Get the word's index.
+      var selectedWordIndex = document.getElementById("hiddenWordIndex").value;
+      // ***
+      //document.getElementById("textForeign").value = context.selectedWords[selectedWordIndex].foreign;
+      //document.getElementById("textGrammar").value = context.selectedWords[selectedWordIndex].grammar;
+      //document.getElementById("textPronunciation").value = context.selectedWords[selectedWordIndex].pronunciation;
+      //document.getElementById("textMeaning").value = context.selectedWords[selectedWordIndex].meaning;
+      // ***
+      //document.getElementById("textUserResponse").value
+      // ***
+      // Change the label of the buttonNext button.
+      document.getElementById("buttonNext").value = "Découvrir la correcte traduction";
+      // Change the current state of the test.
+      document.getElementById("hiddenTestState").value = "showCorrect";
+      // ***
+      break;
 
-  // document.getElementById("spanForeign").innerHTML = context.selectedWords[randomWordIndex].foreign;
-  // document.getElementById("spanGrammar").innerHTML = context.selectedWords[randomWordIndex].grammar;
-  // document.getElementById("spanPronunciation").innerHTML = context.selectedWords[randomWordIndex].pronunciation;
-  // document.getElementById("spanMeaning").innerHTML = context.selectedWords[randomWordIndex].meaning;
+    case "showCorrect":
+      // Display the correct translation to the user.
+      // Get the word's index.
+      var lastWordIndex = document.getElementById("hiddenWordIndex").value;
+      // ***
+      document.getElementById("textForeign").value = context.selectedWords[lastWordIndex].foreign;
+      document.getElementById("textGrammar").value = context.selectedWords[lastWordIndex].grammar;
+      document.getElementById("textPronunciation").value = context.selectedWords[lastWordIndex].pronunciation;
+      //document.getElementById("textMeaning").value = context.selectedWords[lastWordIndex].meaning;
+      // ***
+      //document.getElementById("textUserResponse").value
+      // ***
+      // Change the label of the buttonNext button.
+      document.getElementById("buttonNext").value = "Mot suivant";
+      // Change the current state of the test.
+      document.getElementById("hiddenTestState").value = "showNext";
+      // ***
+      break;
 
-  document.getElementById("textForeign").value = context.selectedWords[randomWordIndex].foreign;
-  document.getElementById("textGrammar").value = context.selectedWords[randomWordIndex].grammar;
-  document.getElementById("textPronunciation").value = context.selectedWords[randomWordIndex].pronunciation;
-  document.getElementById("textMeaning").value = context.selectedWords[randomWordIndex].meaning;
+    default:
+      throw "This test state is not supported here: " + document.getElementById("hiddenTestState").value;
+
+  }
   
 }
 
@@ -637,6 +751,20 @@ function buttonTimer_Click() {
   var fiveMinutes = 60 * 5;
   var display = document.querySelector('#spanTime');
   startTimer(fiveMinutes, display);
+}
+
+
+
+
+function buttonShowHideSettings_Click() {
+  //if (Boolean(document.getElementById("hiddenIsSettingsVisible").value)) {
+  if (document.getElementById("hiddenIsSettingsVisible").value === "true") {
+    document.getElementById("hiddenIsSettingsVisible").value = "false";
+    document.getElementById("divSettings").style.display = "none";
+  } else {
+    document.getElementById("hiddenIsSettingsVisible").value = "true";
+    document.getElementById("divSettings").style.display = "block";
+  }
 }
 
 
