@@ -159,6 +159,46 @@ var vocabulary = {
       ]
     },
   
+    {
+      "source": "ÉDITO B2",
+      "unit": "Unité 4",
+      "page": 55,
+      "section": "COMMENTER UN TABLEAU",
+      "words": [
+        { "foreign": "Ces données / statistiques font apparaître que...", "grammar": "", "pronunciation": "", "meaning": "Tyto údaje / tato statistická data ukazují, že..." },
+        { "foreign": "L'étude montre / indique...", "grammar": "", "pronunciation": "", "meaning": "Studie ukazuje / naznačuje..." },
+      ]
+    },
+  
+    {
+      "source": "ÉDITO B2",
+      "unit": "Unité 4",
+      "page": 55,
+      "section": "INDIQUER UN NOMBRE",
+      "words": [
+        { "foreign": "Le nombre (total) des chômeurs est de 4 millions.", "grammar": "", "pronunciation": "", "meaning": "Počet (celkový počet) nezaměstnaných je 4 miliony." },
+        { "foreign": "28 % des jeunes diplômés envisagent de partir.", "grammar": "", "pronunciation": "", "meaning": "28 % mladých absolventů má v úmyslu odejít." },
+        { "foreign": "L'excédent / le déficit budgétaire se monte à 30 milliards d'euros.", "grammar": "", "pronunciation": "de.fisit", "meaning": "Rozpočtový přebytek / deficit se blíží 30 miliardám eur." },
+        { "foreign": "Le chiffre du chômage s'élève à 10 % de la population active.", "grammar": "", "pronunciation": "", "meaning": "Počet nezaměstnaných se vyhoupl na 10 % aktivní populace." },
+        { "foreign": "Le total / la somme représente...", "grammar": "", "pronunciation": "", "meaning": "Celek / součet představuje..." },
+        { "foreign": "La population est estimée à 2 millions de personnes.", "grammar": "", "pronunciation": "", "meaning": "Počet obyvatel se odhaduje na 2 miliony osob." },
+      ]
+    },
+  
+    {
+      "source": "ÉDITO B2",
+      "unit": "Unité 4",
+      "page": 55,
+      "section": "INDIQUER UNE QUANTITÉ",
+      "words": [
+        { "foreign": "Plus / moins de 30 % des citadins pensent que...", "grammar": "", "pronunciation": "", "meaning": "Více / méně než 30 % obyvatel měst (měšťanů) si myslí, že..." },
+        { "foreign": "Un grand nombre de Marseillais estiment que...", "grammar": "", "pronunciation": "", "meaning": "Velký počet obyvatel Marseille má za to, že..." },
+        { "foreign": "Le double / le triple de...", "grammar": "", "pronunciation": "", "meaning": "Dvojnásobek / trojnásobek (koho/čeho)" },
+        { "foreign": "Le baromètre précédent avait montré un doublement de la population.", "grammar": "", "pronunciation": "", "meaning": "Minulý průzkum ukázal zdvojnásobení populace." },
+        { "foreign": "Si on additionne les revenus de 2013 et ceux de 2014, on obtient...", "grammar": "", "pronunciation": "", "meaning": "Jestliže sečteme příjmy z roku 2013 a z roku 2014, dostaneme..." },
+      ]
+    },
+  
   ]
   
 };
