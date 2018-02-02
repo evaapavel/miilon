@@ -10,6 +10,26 @@ body {
 }
 
 
+
+
+input[type=button]:enabled {
+  font-weight: bold;
+  /* color: #0000DD; */
+  /* color: #0000EE; */
+  /* color: #0044ee; */
+  /* color: #0088ee; */
+  color: #0700B4;
+}
+
+
+
+input[type=button]:disabled {
+  font-weight: normal;
+  color: #AAA8DE;
+}
+
+
+
 #divAll {
   width: 2000px;
   /* width: 300px; */
@@ -84,7 +104,10 @@ body {
 
 
 #textForeign {
-  width: 200px;
+  /* width: 100%; */
+  /* width: 200px; */
+  /* width: 370px; */
+  width: 500px;
 }
 #textGrammar {
   /* width: 30px; */
@@ -96,12 +119,14 @@ body {
 #textMeaning {
   /* width: 350px; */
   /* width: 360px; */
-  width: 370px;
+  /* width: 370px; */
+  width: 500px;
 }
 #textUserResponse {
   /* width: 350px; */
   /* width: 360px; */
-  width: 370px;
+  /* width: 370px; */
+  width: 500px;
 }
 
 

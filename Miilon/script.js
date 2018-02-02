@@ -361,7 +361,7 @@ function getSelectedSectionsFromPageControls() {
 // ***
 function refreshSelectedWords() {
 
-  //context.selectedWords = [];
+  context.selectedWords = [];
   var selectedWordCounter = 0;
   
   for (var i = 0; i < vocabulary.wordSets.length; i++) {
