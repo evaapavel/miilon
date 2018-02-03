@@ -199,6 +199,97 @@ var vocabulary = {
       ]
     },
   
+    {
+      "source": "ÉDITO B2",
+      "unit": "Unité 4",
+      "page": 55,
+      "section": "INDIQUER UNE FRACTION",
+      "words": [
+        { "foreign": "La part des impôts indirects s'est accrue.", "grammar": "", "pronunciation": "e~direkt", "meaning": "Podíl nepřímých daní se zvýšil." },
+        { "foreign": "Les proportions sont respectivement de 27 % et 16 %.", "grammar": "", "pronunciation": "", "meaning": "Poměry činí 27 % a 16 %." },
+        { "foreign": "La moitié / le tiers / le quart / un cinquième des Français prend le train.", "grammar": "", "pronunciation": "", "meaning": "Polovina / třetina / čtvrtina / pětina Francouzů jezdí vlakem." },
+        { "foreign": "Les deux tiers / les trois quarts des Franciliens ont une voiture.", "grammar": "", "pronunciation": "", "meaning": "Dvě třetiny / tři čtvrtiny obyvatel Île-de-France (pařížské oblasti) mají auto." },
+        { "foreign": "Ces voyages représentent 16 % de l'ensemble.", "grammar": "", "pronunciation": "", "meaning": "Tyto cesty představují 16 % z celku." },
+        { "foreign": "Plus d'un tiers des Européens, soit 80 millions...", "grammar": "", "pronunciation": "", "meaning": "Více než jedna třetina Evropanů, totiž 80 milionů..." },
+      ]
+    },
+  
+    {
+      "source": "ÉDITO B2",
+      "unit": "Unité 4",
+      "page": 55,
+      "section": "INDIQUER UNE MAJORITÉ OU UNE MINORITÉ",
+      "words": [
+        { "foreign": "La plupart des citadins prennent les transports en commun.", "grammar": "", "pronunciation": "", "meaning": "Většina obyvatel měst jezdí hromadnou dopravou." },
+        { "foreign": "La place de la voiture est majoritaire / prépondérante, celle du vélo minoritaire.", "grammar": "", "pronunciation": "", "meaning": "Pozice automobilů přestavuje většinu / má převahu, pozice kol je v menšině." },
+      ]
+    },
+  
+    {
+      "source": "ÉDITO B2",
+      "unit": "Unité 4",
+      "page": 55,
+      "section": "POUR MODULER UN CHIFFRE",
+      "words": [
+        { "foreign": "environ / approximativement un quart", "grammar": "", "pronunciation": "", "meaning": "asi / přibližně jedna čtvrtina" },
+        { "foreign": "près de / presque la moitié", "grammar": "", "pronunciation": "", "meaning": "téměř polovina / necelá polovina" },
+      ]
+    },
+  
+    {
+      "source": "ÉDITO B2",
+      "unit": "Unité 4",
+      "page": 55,
+      "section": "POUR COMPARER",
+      "words": [
+        { "foreign": "Par rapport à 2013, la situation de 2014...", "grammar": "", "pronunciation": "", "meaning": "Oproti roku 2013 je situace v roce 2014..." },
+        { "foreign": "Ils sont 27 %, contre 13 % en 2012.", "grammar": "", "pronunciation": "", "meaning": "Je jich 27 % oproti 13 % z roku 2012." },
+        { "foreign": "L'écart entre le chiffre officiel et le nombre réel est important / considérable.", "grammar": "", "pronunciation": "", "meaning": "Rozdíl mezi oficiálním číslem a skutečným počtem je významný / značný." },
+        { "foreign": "La différence est minime / faible / négligeable.", "grammar": "", "pronunciation": "", "meaning": "Rozdíl je nepatrný / slabý / zanedbatelný." },
+        { "foreign": "La part du train est deux fois plus importante dans les voyages professionnels.", "grammar": "", "pronunciation": "", "meaning": "Podíl vlakové dopravy je dvakrát významnější u služebních cest." },
+      ]
+    },
+  
+    {
+      "source": "ÉDITO B2",
+      "unit": "Unité 4",
+      "page": 59,
+      "section": "GÉNÉRALITÉS",
+      "words": [
+        { "foreign": "arrière", "grammar": "nm", "pronunciation": "arje:r", "meaning": "zadní část, zadek, záď (lodi)" },
+        { "foreign": "avant", "grammar": "nm", "pronunciation": "ava~", "meaning": "přední část" },
+        { "foreign": "axe", "grammar": "nm", "pronunciation": "aks", "meaning": "osa" },
+        { "foreign": "bord", "grammar": "nm", "pronunciation": "bo:r", "meaning": "okraj, obruba, břeh" },
+        { "foreign": "centre", "grammar": "nm", "pronunciation": "sa~:tr", "meaning": "střed" },
+        { "foreign": "coin", "grammar": "nm", "pronunciation": "ku^e~", "meaning": "roh, nároží" },
+        { "foreign": "distance", "grammar": "nf", "pronunciation": "dista~:s", "meaning": "vzdálenost" },
+        { "foreign": "éloignement", "grammar": "nm", "pronunciation": "e.lu^aňma~", "meaning": "vzdálení, vzdálenost" },
+        { "foreign": "emplacement", "grammar": "nm", "pronunciation": "a~plasma~", "meaning": "umístění, poloha" },
+        { "foreign": "endroit", "grammar": "nm", "pronunciation": "a~dru^a", "meaning": "místo" },
+        { "foreign": "entourer", "grammar": "vt", "pronunciation": "a~ture.", "meaning": "obklopovat, obkličovat" },
+        { "foreign": "espace", "grammar": "nm", "pronunciation": "espas", "meaning": "prostor" },
+        { "foreign": "extérieur", "grammar": "nm", "pronunciation": "ekste.rjö:r", "meaning": "vnějšek" },
+        { "foreign": "extrémité", "grammar": "nf", "pronunciation": "ekstre.mite.", "meaning": "kraj, konec, nejzazší mez" },
+        { "foreign": "faire face à qc", "grammar": "", "pronunciation": "fe:r fas a", "meaning": "obracet se tváří k čemu, být obrácen k čemu" },
+        { "foreign": "intérieur", "grammar": "nm", "pronunciation": "e~te.rjö:r", "meaning": "vnitřek" },
+        { "foreign": "intervalle", "grammar": "nm", "pronunciation": "e~terval", "meaning": "interval, mezera, vzdálenost, spára" },
+        { "foreign": "limite", "grammar": "nf", "pronunciation": "limit", "meaning": "hranice, mez" },
+        { "foreign": "lointain, e", "grammar": "adj", "pronunciation": "lu^e~te~, lu^e~ten", "meaning": "daleký, vzdálený" },
+        { "foreign": "niveau", "grammar": "nm", "pronunciation": "nivo.", "meaning": "úroveň" },
+        { "foreign": "orientation", "grammar": "nf", "pronunciation": "orja~tasjo~", "meaning": "určení polohy, orientace" },
+        { "foreign": "s'orienter", "grammar": "vp", "pronunciation": "sorja~te.", "meaning": "orientovat se, směřovat (kam)" },
+        { "foreign": "origine", "grammar": "nf", "pronunciation": "orižin", "meaning": "počátek" },
+        { "foreign": "périphérie", "grammar": "nf", "pronunciation": "pe.rife.ri", "meaning": "obvod (kruhu), periferie, vzdálenější předměstí" },
+        { "foreign": "place", "grammar": "nf", "pronunciation": "plas", "meaning": "místo, prostor, náměstí" },
+        { "foreign": "profondeur", "grammar": "nf", "pronunciation": "profo~dö:r", "meaning": "hloubka" },
+        { "foreign": "site", "grammar": "nm", "pronunciation": "sit", "meaning": "(malebná) poloha, krajina, místo" },
+        { "foreign": "situation", "grammar": "nf", "pronunciation": "sitü^asjo~", "meaning": "poloha, postavení, stav, situace" },
+        { "foreign": "(se) situer", "grammar": "vt/vp", "pronunciation": "sitü^e.", "meaning": "stavět, postavit, položit (se)" },
+        { "foreign": "se trouver", "grammar": "vp", "pronunciation": "s@truve.", "meaning": "nalézat se" },
+        { "foreign": "voisinage", "grammar": "nm", "pronunciation": "vu^zina:ž", "meaning": "sousedství" },
+      ]
+    },
+  
   ]
   
 };
