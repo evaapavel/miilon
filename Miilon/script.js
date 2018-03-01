@@ -338,6 +338,10 @@ putSelectedSectionsToPageControls();
 refreshSelectedWords();
 
 
+// Popup Test.
+divPopup_Click();
+
+
 
 
 // ***
@@ -706,6 +710,8 @@ function handleNextTestPhase() {
       // Change the current state of the test.
       document.getElementById("hiddenTestState").value = "waitForTip";
       // ***
+      //divPopup_Click();
+      document.getElementById("spanPopup").innerHTML = context.selectedWords[randomWordIndex].meaning;
       break;
     
     case "waitForTip":
@@ -725,6 +731,8 @@ function handleNextTestPhase() {
       // Change the current state of the test.
       document.getElementById("hiddenTestState").value = "showCorrect";
       // ***
+      divPopup_Click();
+      document.getElementById("spanPopup").innerHTML = context.selectedWords[selectedWordIndex].meaning;
       break;
 
     case "showCorrect":
@@ -744,6 +752,8 @@ function handleNextTestPhase() {
       // Change the current state of the test.
       document.getElementById("hiddenTestState").value = "showNext";
       // ***
+      divPopup_Click();
+      document.getElementById("spanPopup").innerHTML = context.selectedWords[lastWordIndex].foreign;
       break;
 
     default:
@@ -900,6 +910,51 @@ function buttonShowHideSettings_Click() {
 
 
 
+
+
+// Popup Test BEGIN
+
+// When the users clicks on <div>, open the popup.
+function divPopup_Click() {
+  var popup = document.getElementById("spanPopup");
+  popup.classList.toggle("show");
+}
+
+// Popup Test END
   
+
+
+
+
+
+// Why should I put some dummy code here?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
