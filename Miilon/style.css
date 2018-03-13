@@ -30,10 +30,11 @@ input[type=button]:disabled {
 
 
 .buttonImportant {
-  width: 200px;
+  /* width: 200px; */
+  /* width: 300px; */
   /* font-size: 30px; */
-  /* font-size: 20px; */
-  font-size: 15px;
+  font-size: 20px;
+  /* font-size: 15px; */
 }
 
 
