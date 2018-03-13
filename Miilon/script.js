@@ -715,7 +715,8 @@ function handleNextTestPhase() {
       // Store the selected word index in a hidden field.
       document.getElementById("hiddenWordIndex").value = context.currentWordIndex;
       // Change the label of the buttonNext button.
-      document.getElementById("buttonNext").value = "Veuillez écrire votre tuyau";
+      //document.getElementById("buttonNext").value = "Veuillez écrire votre tuyau";
+      document.getElementById("buttonNext").value = "Découvrir la correcte traduction";
       // Change the current state of the test.
       //document.getElementById("hiddenTestState").value = "waitForTip";
       document.getElementById("hiddenTestState").value = "showCorrect";
