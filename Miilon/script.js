@@ -330,7 +330,11 @@ var context = {
   // Words to be offerred to the user.
   "selectedWords" : [],
   // Index of the current word presented to the user in the test section of the page.
-  "currentWordIndex": -1
+  "currentWordIndex": -1,
+  // True :-: the popup window is visible, false :-: the popup window is hidden.
+  "isPopupWindowVisible" : false,
+  // Timeout object to count down until the popup window should disappear.
+  "popupWindowTimeout": null
 };
 
 initSectionSelector();
@@ -339,7 +343,8 @@ refreshSelectedWords();
 
 
 // Popup Test.
-divPopup_Click();
+//divPopup_Click();
+//var timeoutPopup = null;
 
 
 
@@ -675,6 +680,10 @@ function buttonNext_Click() {
 // Returns:
 // ***
 function handleNextTestPhase() {
+
+  // Initialize the current word index.
+  // Just in case...
+  context.currentWordIndex = -1;
   
   //alert("Inside buttonNext_onClick...");
   //alert("selectedWords.length = " + context.selectedWords.length);
@@ -684,15 +693,15 @@ function handleNextTestPhase() {
     case "showNext":
       // Display a new word to the user.
       // Select a word randomly.
-      //var randomWordIndex = getRandomIntFromInterval(0, context.selectedWords.length);
-      var randomWordIndex = getRandomIntFromInterval(0, context.selectedWords.length - 1);
+      //var context.currentWordIndex = getRandomIntFromInterval(0, context.selectedWords.length);
+      context.currentWordIndex = getRandomIntFromInterval(0, context.selectedWords.length - 1);
       // ***
-      //alert("randomWordIndex = " + randomWordIndex);
+      //alert("context.currentWordIndex = " + context.currentWordIndex);
       // ***
-      //document.getElementById("textForeign").value = context.selectedWords[randomWordIndex].foreign;
-      //document.getElementById("textGrammar").value = context.selectedWords[randomWordIndex].grammar;
-      //document.getElementById("textPronunciation").value = context.selectedWords[randomWordIndex].pronunciation;
-      document.getElementById("textMeaning").value = context.selectedWords[randomWordIndex].meaning;
+      //document.getElementById("textForeign").value = context.selectedWords[context.currentWordIndex].foreign;
+      //document.getElementById("textGrammar").value = context.selectedWords[context.currentWordIndex].grammar;
+      //document.getElementById("textPronunciation").value = context.selectedWords[context.currentWordIndex].pronunciation;
+      document.getElementById("textMeaning").value = context.selectedWords[context.currentWordIndex].meaning;
       // ***
       //document.getElementById("textUserResponse").value
       // ***
@@ -704,46 +713,48 @@ function handleNextTestPhase() {
       document.getElementById("textUserResponse").value = "";
       // ***
       // Store the selected word index in a hidden field.
-      document.getElementById("hiddenWordIndex").value = randomWordIndex;
+      document.getElementById("hiddenWordIndex").value = context.currentWordIndex;
       // Change the label of the buttonNext button.
       document.getElementById("buttonNext").value = "Veuillez écrire votre tuyau";
       // Change the current state of the test.
-      document.getElementById("hiddenTestState").value = "waitForTip";
-      // ***
-      //divPopup_Click();
-      document.getElementById("spanPopup").innerHTML = context.selectedWords[randomWordIndex].meaning;
-      break;
-    
-    case "waitForTip":
-      // Wait for the user's tip as to the translation.
-      // Get the word's index.
-      var selectedWordIndex = document.getElementById("hiddenWordIndex").value;
-      // ***
-      //document.getElementById("textForeign").value = context.selectedWords[selectedWordIndex].foreign;
-      //document.getElementById("textGrammar").value = context.selectedWords[selectedWordIndex].grammar;
-      //document.getElementById("textPronunciation").value = context.selectedWords[selectedWordIndex].pronunciation;
-      //document.getElementById("textMeaning").value = context.selectedWords[selectedWordIndex].meaning;
-      // ***
-      //document.getElementById("textUserResponse").value
-      // ***
-      // Change the label of the buttonNext button.
-      document.getElementById("buttonNext").value = "Découvrir la correcte traduction";
-      // Change the current state of the test.
+      //document.getElementById("hiddenTestState").value = "waitForTip";
       document.getElementById("hiddenTestState").value = "showCorrect";
       // ***
-      divPopup_Click();
-      document.getElementById("spanPopup").innerHTML = context.selectedWords[selectedWordIndex].meaning;
+      //divPopup_Click();
+      document.getElementById("spanPopup").innerHTML = context.selectedWords[context.currentWordIndex].meaning;
+      showPopupWindow();
       break;
+    
+    // case "waitForTip":
+    //   // Wait for the user's tip as to the translation.
+    //   // Get the word's index.
+    //   context.currentWordIndex = document.getElementById("hiddenWordIndex").value;
+    //   // ***
+    //   //document.getElementById("textForeign").value = context.selectedWords[context.currentWordIndex].foreign;
+    //   //document.getElementById("textGrammar").value = context.selectedWords[context.currentWordIndex].grammar;
+    //   //document.getElementById("textPronunciation").value = context.selectedWords[context.currentWordIndex].pronunciation;
+    //   //document.getElementById("textMeaning").value = context.selectedWords[context.currentWordIndex].meaning;
+    //   // ***
+    //   //document.getElementById("textUserResponse").value
+    //   // ***
+    //   // Change the label of the buttonNext button.
+    //   document.getElementById("buttonNext").value = "Découvrir la correcte traduction";
+    //   // Change the current state of the test.
+    //   document.getElementById("hiddenTestState").value = "showCorrect";
+    //   // ***
+    //   //divPopup_Click();
+    //   document.getElementById("spanPopup").innerHTML = context.selectedWords[context.currentWordIndex].meaning;
+    //   break;
 
     case "showCorrect":
       // Display the correct translation to the user.
       // Get the word's index.
-      var lastWordIndex = document.getElementById("hiddenWordIndex").value;
+      context.currentWordIndex = document.getElementById("hiddenWordIndex").value;
       // ***
-      document.getElementById("textForeign").value = context.selectedWords[lastWordIndex].foreign;
-      document.getElementById("textGrammar").value = context.selectedWords[lastWordIndex].grammar;
-      document.getElementById("textPronunciation").value = context.selectedWords[lastWordIndex].pronunciation;
-      //document.getElementById("textMeaning").value = context.selectedWords[lastWordIndex].meaning;
+      document.getElementById("textForeign").value = context.selectedWords[context.currentWordIndex].foreign;
+      document.getElementById("textGrammar").value = context.selectedWords[context.currentWordIndex].grammar;
+      document.getElementById("textPronunciation").value = context.selectedWords[context.currentWordIndex].pronunciation;
+      //document.getElementById("textMeaning").value = context.selectedWords[context.currentWordIndex].meaning;
       // ***
       //document.getElementById("textUserResponse").value
       // ***
@@ -752,8 +763,9 @@ function handleNextTestPhase() {
       // Change the current state of the test.
       document.getElementById("hiddenTestState").value = "showNext";
       // ***
-      divPopup_Click();
-      document.getElementById("spanPopup").innerHTML = context.selectedWords[lastWordIndex].foreign;
+      //divPopup_Click();
+      document.getElementById("spanPopup").innerHTML = context.selectedWords[context.currentWordIndex].foreign;
+      showPopupWindow();
       break;
 
     default:
@@ -766,30 +778,97 @@ function handleNextTestPhase() {
 
 
 
+// ***
+// Handles the Click event on the radio button radioForeignFirst.
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
 function radioForeignFirst_Click() {
   getSettingsFromPageControls();
 }
 
+
+
+
+// ***
+// Handles the Click event on the radio button radioNativeFirst.
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
 function radioNativeFirst_Click() {
   getSettingsFromPageControls();
 }
 
+
+
+
+// ***
+// Handles the Click event on the checkbox checkboxAutoNext.
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
 function checkboxAutoNext_Click() {
   getSettingsFromPageControls();
 }
 
+
+
+
+// ***
+// Handles the Click event on the dropdown list selectTimeDelay.
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
 function selectTimeDelay_Click() {
   getSettingsFromPageControls();
 }
 
+
+
+
+// ***
+// Handles the Click event on the checkbox checkboxInteractive.
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
 function checkboxInteractive_Click() {
   getSettingsFromPageControls();
 }
 
+
+
+
+// ***
+// Handles the Click event on the radio button radioOriginalOrder.
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
 function radioOriginalOrder_Click() {
   getSettingsFromPageControls();
 }
 
+
+
+
+// ***
+// Handles the Click event on the radio button radioRandomOrder.
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
 function radioRandomOrder_Click() {
   getSettingsFromPageControls();
 }
@@ -857,6 +936,151 @@ function getSettingsFromPageControls() {
 
 
 
+// ***
+// Handles the Click event on the button buttonShowHideSettings.
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
+function buttonShowHideSettings_Click() {
+  //if (Boolean(document.getElementById("hiddenIsSettingsVisible").value)) {
+  if (document.getElementById("hiddenIsSettingsVisible").value === "true") {
+    document.getElementById("hiddenIsSettingsVisible").value = "false";
+    document.getElementById("divSettings").style.display = "none";
+  } else {
+    document.getElementById("hiddenIsSettingsVisible").value = "true";
+    document.getElementById("divSettings").style.display = "block";
+  }
+}
+
+
+
+
+
+// ***
+// Shows the popup window and sets a timeout for it to hide again.
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
+function showPopupWindow() {
+  // The timeout should be always set (no matter whether the window is visible or hidden).
+  var timeoutInSeconds = Number(settings.timeDelay) - 1;
+  if (timeoutInSeconds < 1) {
+    timeoutInSeconds = 1;
+  }
+  if (timeoutInSeconds > 10) {
+    timeoutInSeconds = 10;
+  }
+// Check for the popup status first (visible/hidden).
+  if (context.isPopupWindowVisible) {
+    // The popup window is currently shown.
+    // Set timeout.
+    setTimeoutForPopupWindow(timeoutInSeconds);
+  } else {
+    // The popup window is hidden.
+    // Do show the window and set timeout for it to disappear again.
+    // Show the window.
+    divPopup_Click();
+    // Set the status.
+    context.isPopupWindowVisible = true;
+    // Set timeout.
+    setTimeoutForPopupWindow(timeoutInSeconds);
+    // Done.
+  }
+}
+
+
+
+
+// ***
+// Sets a timeout for the popup window. Once the time is out, the popup window hides.
+// ***
+// Parameters:
+// timeoutInSeconds ................................. Timeout for the popup window (in seconds).
+// ***
+// Returns:
+// ***
+function setTimeoutForPopupWindow(timeoutInSeconds) {
+  // Just in case: If there is any previous timeout event set, then cancel it.
+  clearTimeoutForPopupWindow();
+  // Set the timeout.
+  var timeoutInMilliseconds = timeoutInSeconds * 1000;
+  context.popupWindowTimeout = setTimeout(popupWindow_Timeout, timeoutInMilliseconds);
+}
+
+
+
+
+// ***
+// Handles the timeout event for the popup window.
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
+function popupWindow_Timeout() {
+  // First of all, clear the timeout.
+  clearTimeoutForPopupWindow();
+  // Hide the popup window.
+  hidePopupWindow();
+}
+
+
+
+
+// ***
+// Hides the popup window.
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
+function hidePopupWindow() {
+  // Check for the popup status first (visible/hidden).
+  if (context.isPopupWindowVisible) {
+    // The popup window is currently shown.
+    // Clear the timeout first.
+    clearTimeoutForPopupWindow();
+    // Hide the window.
+    divPopup_Click();
+    // Set the status.
+    context.isPopupWindowVisible = false;
+    // Done.
+  } else {
+    // The popup window is hidden.
+    // Clear the timeout.
+    // Just in case...
+    clearTimeoutForPopupWindow();
+  }
+}
+
+
+
+
+// ***
+// Clears a timeout on the popup window (if one has been set).
+// ***
+// Parameters:
+// ***
+// Returns:
+// ***
+function clearTimeoutForPopupWindow() {
+  if (context.popupWindowTimeout != null) {
+    clearTimeout(context.popupWindowTimeout);
+    context.popupWindowTimeout = null;
+  }
+}
+
+
+
+
+// ******************************************************************************************************
+// Timer Test BEGIN
+// ******************************************************************************************************
+
 function startTimer(duration, display) {
 
   var timer = duration, minutes, seconds;
@@ -873,7 +1097,7 @@ function startTimer(duration, display) {
     // ***
     if (timer % 4 == 0) {
       //buttonNext_onClick();
-      buttonNext_Click();
+      //buttonNext_Click();
     }
     // ***
 
@@ -894,25 +1118,16 @@ function buttonTimer_Click() {
   startTimer(fiveMinutes, display);
 }
 
-
-
-
-function buttonShowHideSettings_Click() {
-  //if (Boolean(document.getElementById("hiddenIsSettingsVisible").value)) {
-  if (document.getElementById("hiddenIsSettingsVisible").value === "true") {
-    document.getElementById("hiddenIsSettingsVisible").value = "false";
-    document.getElementById("divSettings").style.display = "none";
-  } else {
-    document.getElementById("hiddenIsSettingsVisible").value = "true";
-    document.getElementById("divSettings").style.display = "block";
-  }
-}
+// ******************************************************************************************************
+// Timer Test END
+// ******************************************************************************************************
 
 
 
 
-
+// ******************************************************************************************************
 // Popup Test BEGIN
+// ******************************************************************************************************
 
 // When the users clicks on <div>, open the popup.
 function divPopup_Click() {
@@ -920,7 +1135,9 @@ function divPopup_Click() {
   popup.classList.toggle("show");
 }
 
+// ******************************************************************************************************
 // Popup Test END
+// ******************************************************************************************************
   
 
 

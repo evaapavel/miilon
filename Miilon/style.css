@@ -168,6 +168,7 @@ input[type=button]:disabled {
 }
 
 /* Popup arrow. */
+/*
 .popup .popuptext::after {
   content: "";
   position: absolute;
@@ -178,6 +179,7 @@ input[type=button]:disabled {
   border-style: solid;
   border-color: #555 transparent transparent transparent;
 }
+*/
 
 /* Toggle this class when clicking on the popup container (hide and show the popup). */
 .popup .show {
