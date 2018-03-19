@@ -10,6 +10,7 @@ var vocabulary = {
       "source": "ÉDITO B2",
       "unit": "Unité 2",
       "page": 32,
+      "topic": "Des paroles et des sons",
       "section": "DU CÔTÉ DES ANIMAUX",
       "words": [
         { "foreign": "aboyer", "grammar": "vi", "pronunciation": "abu^aje.", "meaning": "štěkat" },
@@ -39,7 +40,8 @@ var vocabulary = {
       "source": "Papier",
       "unit": "Serge Gainsbourg",
       "page": 1,
-      "section": "Sois belle et tais-toi",
+      "topic": "Sois belle et tais-toi",
+      "section": "Paroles",
       "words": [
         { "foreign": "ramier", "grammar": "nm", "pronunciation": "ramje.", "meaning": "doupňák (holub)" },
         { "foreign": "moineau", "grammar": "nm", "pronunciation": "mu^ano.", "meaning": "vrabec" },
@@ -96,6 +98,7 @@ var vocabulary = {
       "source": "ÉDITO B2",
       "unit": "Unité 3",
       "page": 40,
+      "topic": "La presse",
       "section": "LA COMMUNICATION",
       "words": [
         { "foreign": "communiqué de presse", "grammar": "nm", "pronunciation": "komünike. d@ pres", "meaning": "tiskové oznámení, tisková zpráva" },
@@ -115,6 +118,7 @@ var vocabulary = {
       "source": "ÉDITO B2",
       "unit": "Unité 3",
       "page": 40,
+      "topic": "La presse",
       "section": "LA PRESSE",
       "words": [
         { "foreign": "abonnement", "grammar": "nm", "pronunciation": "abonma~", "meaning": "předplatné" },
@@ -145,6 +149,7 @@ var vocabulary = {
       "source": "ÉDITO B2",
       "unit": "Unité 3",
       "page": 40,
+      "topic": "La presse",
       "section": "LES TYPES D'ARTICLES",
       "words": [
         { "foreign": "billet", "grammar": "nm", "pronunciation": "bije", "meaning": "malý novinový článek (často polemický nebo satirický)" },
@@ -163,6 +168,7 @@ var vocabulary = {
       "source": "ÉDITO B2",
       "unit": "Unité 4",
       "page": 55,
+      "topic": "Commenter des données chiffrées",
       "section": "COMMENTER UN TABLEAU",
       "words": [
         { "foreign": "Ces données / statistiques font apparaître que...", "grammar": "", "pronunciation": "", "meaning": "Tyto údaje / tato statistická data ukazují, že..." },
@@ -174,6 +180,7 @@ var vocabulary = {
       "source": "ÉDITO B2",
       "unit": "Unité 4",
       "page": 55,
+      "topic": "Commenter des données chiffrées",
       "section": "INDIQUER UN NOMBRE",
       "words": [
         { "foreign": "Le nombre (total) des chômeurs est de 4 millions.", "grammar": "", "pronunciation": "", "meaning": "Počet (celkový počet) nezaměstnaných je 4 miliony." },
@@ -189,6 +196,7 @@ var vocabulary = {
       "source": "ÉDITO B2",
       "unit": "Unité 4",
       "page": 55,
+      "topic": "Commenter des données chiffrées",
       "section": "INDIQUER UNE QUANTITÉ",
       "words": [
         { "foreign": "Plus / moins de 30 % des citadins pensent que...", "grammar": "", "pronunciation": "", "meaning": "Více / méně než 30 % obyvatel měst (měšťanů) si myslí, že..." },
@@ -203,6 +211,7 @@ var vocabulary = {
       "source": "ÉDITO B2",
       "unit": "Unité 4",
       "page": 55,
+      "topic": "Commenter des données chiffrées",
       "section": "INDIQUER UNE FRACTION",
       "words": [
         { "foreign": "La part des impôts indirects s'est accrue.", "grammar": "", "pronunciation": "e~direkt", "meaning": "Podíl nepřímých daní se zvýšil." },
@@ -218,6 +227,7 @@ var vocabulary = {
       "source": "ÉDITO B2",
       "unit": "Unité 4",
       "page": 55,
+      "topic": "Commenter des données chiffrées",
       "section": "INDIQUER UNE MAJORITÉ OU UNE MINORITÉ",
       "words": [
         { "foreign": "La plupart des citadins prennent les transports en commun.", "grammar": "", "pronunciation": "", "meaning": "Většina obyvatel měst jezdí hromadnou dopravou." },
@@ -229,6 +239,7 @@ var vocabulary = {
       "source": "ÉDITO B2",
       "unit": "Unité 4",
       "page": 55,
+      "topic": "Commenter des données chiffrées",
       "section": "POUR MODULER UN CHIFFRE",
       "words": [
         { "foreign": "environ / approximativement un quart", "grammar": "", "pronunciation": "", "meaning": "asi / přibližně jedna čtvrtina" },
@@ -240,6 +251,7 @@ var vocabulary = {
       "source": "ÉDITO B2",
       "unit": "Unité 4",
       "page": 55,
+      "topic": "Commenter des données chiffrées",
       "section": "POUR COMPARER",
       "words": [
         { "foreign": "Par rapport à 2013, la situation de 2014...", "grammar": "", "pronunciation": "", "meaning": "Oproti roku 2013 je situace v roce 2014..." },
@@ -254,6 +266,7 @@ var vocabulary = {
       "source": "ÉDITO B2",
       "unit": "Unité 4",
       "page": 59,
+      "topic": "Le lieu",
       "section": "GÉNÉRALITÉS",
       "words": [
         { "foreign": "arrière", "grammar": "nm", "pronunciation": "arje:r", "meaning": "zadní část, zadek, záď (lodi)" },
@@ -394,8 +407,9 @@ function initSectionSelector() {
     //cellPage.innerHTML = wordSet.page;
     //cellSection.innerHTML = wordSet.section;
 
-    cellDescription.innerHTML =  wordSet.unit + ": " + wordSet.section + " (" + wordSet.source + " - p. " + wordSet.page + ")";
-
+    //cellDescription.innerHTML =  wordSet.unit + ": " + wordSet.section + " (" + wordSet.source + " - p. " + wordSet.page + ")";
+    cellDescription.innerHTML =  wordSet.unit + ": " + wordSet.topic + " - " + wordSet.section + " (" + wordSet.source + " - p. " + wordSet.page + ")";
+    
   }
 
 }
