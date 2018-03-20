@@ -456,6 +456,45 @@ var vocabulary = {
       ]
     },
   
+    {
+      "source": "ÉDITO B2",
+      "unit": "Unité 4",
+      "page": 61,
+      "topic": "La géographie",
+      "section": "GÉNÉRALITÉS",
+      "words": [
+        { "foreign": "atlas", "grammar": "nm", "pronunciation": "atla:s", "meaning": "atlas" },
+        { "foreign": "carte", "grammar": "nf", "pronunciation": "kart", "meaning": "mapa" },
+        { "foreign": "géographique", "grammar": "adj", "pronunciation": "že.ografik", "meaning": "zeměpisný" },
+        { "foreign": "plan", "grammar": "nm", "pronunciation": "pla~", "meaning": "půdorys, výkres, schéma, plánek" },
+        
+        { "foreign": "continent", "grammar": "nm", "pronunciation": "ko~tina~", "meaning": "kontinent, světadíl, pevnina" },
+        { "foreign": "équateur", "grammar": "nm", "pronunciation": "e.ku^atö:r", "meaning": "rovník" },
+        { "foreign": "globe", "grammar": "nm", "pronunciation": "glob", "meaning": "zeměkoule, glóbus" },
+        { "foreign": "hémisphère", "grammar": "nm", "pronunciation": "e.misfe:r", "meaning": "polokoule" },
+        { "foreign": "horizon", "grammar": "nm", "pronunciation": "orizo~", "meaning": "obzor" },
+        { "foreign": "latitude", "grammar": "nf", "pronunciation": "latitüd", "meaning": "zeměpisná šířka" },
+        { "foreign": "longitude", "grammar": "nf", "pronunciation": "lo~žitüd", "meaning": "zeměpisná délka" },
+        { "foreign": "austral, ale, aux/als", "grammar": "adj", "pronunciation": "o.stral", "meaning": "jižní" },
+        { "foreign": "océan Austral", "grammar": "nm", "pronunciation": "ose.a~ o.stral", "meaning": "Jižní ledové moře" },
+        { "foreign": "est", "grammar": "nm", "pronunciation": "est", "meaning": "východ" },
+        { "foreign": "méridional, ale, aux", "grammar": "adj", "pronunciation": "me.ridjonal", "meaning": "jižní, z jihu" },
+        { "foreign": "midi", "grammar": "nm", "pronunciation": "midi", "meaning": "poledne; jih (básnicky)" },
+        { "foreign": "monde", "grammar": "nm", "pronunciation": "mo~:d", "meaning": "svět" },
+        { "foreign": "nord", "grammar": "nm", "pronunciation": "no:r", "meaning": "sever" },
+        { "foreign": "occident", "grammar": "nm", "pronunciation": "oksida~", "meaning": "západ" },
+        { "foreign": "orient", "grammar": "nm", "pronunciation": "orja~", "meaning": "východ" },
+        { "foreign": "ouest", "grammar": "nm", "pronunciation": "u^est", "meaning": "západ" },
+        { "foreign": "sud", "grammar": "nm", "pronunciation": "süd", "meaning": "jih" },
+        { "foreign": "terre", "grammar": "nf", "pronunciation": "te:r", "meaning": "země" },
+        { "foreign": "tropique", "grammar": "nm", "pronunciation": "tropik", "meaning": "obratník" },
+        { "foreign": "tropique du Cancer", "grammar": "nm", "pronunciation": "tropik dü ka~se:r", "meaning": "obratník Raka" },
+        { "foreign": "tropique du Capricorne", "grammar": "nm", "pronunciation": "tropik dü kaprikorn", "meaning": "obratník Kozoroha" },
+        { "foreign": "tropiques", "grammar": "nm pl", "pronunciation": "tropik", "meaning": "tropy" },
+        { "foreign": "tropical, ale, aux", "grammar": "adj", "pronunciation": "tropikal", "meaning": "tropický" },
+      ]
+    },
+  
   ]
   
 };
