@@ -495,6 +495,47 @@ var vocabulary = {
       ]
     },
   
+    {
+      "source": "ÉDITO B2",
+      "unit": "Unité 4",
+      "page": 61,
+      "topic": "La géographie",
+      "section": "LE PAYS",
+      "words": [
+        { "foreign": "capitale", "grammar": "nf", "pronunciation": "kapital", "meaning": "hlavní město" },
+        { "foreign": "frontière", "grammar": "nf", "pronunciation": "fro~tje:r", "meaning": "hranice" },
+        { "foreign": "indigène", "grammar": "adj", "pronunciation": "e~dižen", "meaning": "domorodý, tuzemský, domácí" },
+        { "foreign": "peuplement", "grammar": "nm", "pronunciation": "pöpl@ma~", "meaning": "zalidnění" },
+        { "foreign": "peupler", "grammar": "vt", "pronunciation": "pöple.", "meaning": "zalidnit, obývat" },
+        { "foreign": "région", "grammar": "nf", "pronunciation": "re.žjo~", "meaning": "oblast" },
+        { "foreign": "territoire", "grammar": "nm", "pronunciation": "teritu^a:r", "meaning": "území" },
+      ]
+    },
+  
+    {
+      "source": "ÉDITO B2",
+      "unit": "Unité 4",
+      "page": 61,
+      "topic": "La géographie",
+      "section": "LE RELIEF ET LA VÉGÉTATION",
+      "words": [
+        { "foreign": "désert", "grammar": "nm", "pronunciation": "de.ze:r", "meaning": "pustina, poušť" },
+        { "foreign": "désertique", "grammar": "adj", "pronunciation": "de.zertik", "meaning": "pouštní" },
+        { "foreign": "forestier, ière", "grammar": "adj", "pronunciation": "forestje., stje:r", "meaning": "lesní, lesnický" },
+        { "foreign": "forêt", "grammar": "nf", "pronunciation": "fore", "meaning": "les" },
+        { "foreign": "jungle", "grammar": "nf", "pronunciation": "žo~:gl, žö~:gl", "meaning": "džungle" },
+        { "foreign": "oasis", "grammar": "nf", "pronunciation": "oazis", "meaning": "oáza" },
+        { "foreign": "plaine", "grammar": "nf", "pronunciation": "plen", "meaning": "rovina, planina" },
+        { "foreign": "plateau", "grammar": "nm", "pronunciation": "plato.", "meaning": "plošina, náhorní rovina" },
+        { "foreign": "pôle", "grammar": "nm", "pronunciation": "po:l", "meaning": "pól" },
+        { "foreign": "prairie", "grammar": "nf", "pronunciation": "preri", "meaning": "louka, prérie" },
+        { "foreign": "rural, ale, aux", "grammar": "adj", "pronunciation": "rüral", "meaning": "polní, venkovský" },
+        { "foreign": "savane", "grammar": "nf", "pronunciation": "savan", "meaning": "savana" },
+        { "foreign": "sol", "grammar": "nm", "pronunciation": "sol", "meaning": "půda, země" },
+        { "foreign": "steppe", "grammar": "nf", "pronunciation": "step", "meaning": "step" },
+      ]
+    },
+  
   ]
   
 };
